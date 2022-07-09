@@ -9,4 +9,6 @@ class User < ApplicationRecord
   after_create_commit { broadcast_append_to "users" }
 
   validates_presence_of :handle
+
+  has_many :messages
 end
