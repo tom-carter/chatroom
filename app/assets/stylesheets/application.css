@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+.message {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #aabbcc ;
+    padding: 5px
+}
+
+.message-timestamp {
+    font-size: x-small;
+}
+
+.message-form {
+    position: fixed;
+    bottom: 0;
+    width: 70%
+}
+
+.message-input {
+    width: 80%;
+    margin-right: 5px;
+}
+
+.col-lg-9 {
+    height: 80vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}

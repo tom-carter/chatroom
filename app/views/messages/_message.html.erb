@@ -1,2 +1,5 @@
-<div> <%= message.body %> </div>
-<div> Sent by <%= message.user.handle %> at <%= message.created_at %></div>
+<div class="message message-<%= message.user.id %>">
+  <h6> <%= message.user.handle %> said:</h6>
+  <%= message.body %>
+  <div class="message-timestamp"> Sent at <%= message.created_at %></div>
+</div>
