@@ -30,6 +30,9 @@ The development configuration is set up to send emails to the correct port.
 `rake db:migrate`
 `rails s`
 
+Then visit http://127.0.0.1:3000
+
+
 * Part 3
 
 I assume that the test does not require me to actually add a cron job (this is something very hard to achieve when I don't know the system it will be run on). So I have provided a rake task.
