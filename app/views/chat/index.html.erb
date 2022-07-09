@@ -1,1 +1,8 @@
-<span>Welcome to the chat room!</span>
+<h1>Welcome to the chat room, <%= current_user.handle %>!</h1>
+
+<h4>Users</h4>
+
+<%= turbo_stream_from "users" %>
+<div id="users">
+  <%= render @users %>
+</div>
