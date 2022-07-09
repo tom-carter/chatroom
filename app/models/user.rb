@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   scope :other_people, ->(user) { where.not(id: user) }
+  scope :should_be_mailed, ->() { where("last_mailed_at IS NULL OR last_mailed_at < ?", Date.today - 6.days) }
 
   after_create_commit { broadcast_append_to "users" }
 
