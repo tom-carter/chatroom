@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates_presence_of :handle
 
   has_many :messages
+
+  def last_message_sent_time
+    messages.order(:created_at).last&.created_at || created_at
+  end
 end

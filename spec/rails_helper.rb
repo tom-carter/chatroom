@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'shoulda-matchers'
 
 require "bundler/setup"
+require 'support/factory_bot'
 ::Bundler.require(:default, :test)
 
 ::Shoulda::Matchers.configure do |config|
