@@ -1,8 +1,9 @@
-# README
+# README FOR FONIX RECRUITMENT TEST
 
 * Ruby version
 
-This is tested with 2.7.5
+This is tested with 2.7.5 - probably works with other Rubys but not sure. 
+
 
 * Email
 
@@ -13,29 +14,31 @@ To set it up run:
 gem install mailcatcher
 mailcatcher
 ```
+
 Then read emails on http://127.0.0.1:1080/
 The development configuration is set up to send emails to the correct port.
 
+* System dependencies
 
-[//]: # (* System dependencies)
+1. Redis
 
+2. SQLite3
 
-[//]: # (* Configuration)
+* Set up
 
-[//]: # ()
-[//]: # (* Database creation)
+`bundle install`
+`rake db:migrate`
+`rails s`
 
-[//]: # ()
-[//]: # (* Database initialization)
+* Part 3
 
-[//]: # ()
-[//]: # (* How to run the test suite)
+I assume that the test does not require me to actually add a cron job (this is something very hard to achieve when I don't know the system it will be run on). So I have provided a rake task.
+Typically you might add something to Cron:
 
-[//]: # ()
-[//]: # (* Services &#40;job queues, cache servers, search engines, etc.&#41;)
+```
+5 8 * * Mon /bin/bash -l -c 'cd /path/to/your/project && RAILS_ENV=<RAILS_ENV> bundle exec rake mailing:weekly_digest >> log/cron.log 2>&1'
+```
 
-[//]: # ()
-[//]: # (* Deployment instructions)
+You can run the rake task manually like this:
 
-[//]: # ()
-[//]: # (* ...)
+`rake mailing:weekly_digest`
