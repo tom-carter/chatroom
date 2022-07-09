@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
 
-* System dependencies
+This is tested with 2.7.5
 
-* Configuration
+* Email
 
-* Database creation
+I've been using Mailcatcher to handle email in development environment.
+https://mailcatcher.me
+To set it up run: 
+```ruby
+gem install mailcatcher
+mailcatcher
+```
+Then read emails on http://127.0.0.1:1080/
+The development configuration is set up to send emails to the correct port.
 
-* Database initialization
 
-* How to run the test suite
+[//]: # (* System dependencies)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+[//]: # (* Configuration)
 
-* ...
+[//]: # ()
+[//]: # (* Database creation)
+
+[//]: # ()
+[//]: # (* Database initialization)
+
+[//]: # ()
+[//]: # (* How to run the test suite)
+
+[//]: # ()
+[//]: # (* Services &#40;job queues, cache servers, search engines, etc.&#41;)
+
+[//]: # ()
+[//]: # (* Deployment instructions)
+
+[//]: # ()
+[//]: # (* ...)
