@@ -1,22 +1,33 @@
-<h1>Welcome to the chat room, <%= current_user.handle %>!</h1>
+<div class="container">
+  <p>Welcome to the chat room, <%= current_user.handle %>!</p>
 
-<h4>Users</h4>
+  <div class="row">
+    <div class="col-lg-9">
+      <h4>Messages</h4>
+      <%= turbo_stream_from "messages" %>
+      <div id="messages">
+        <%= render @messages %>
+      </div>
+    </div>
 
-<%= turbo_stream_from "users" %>
-<div id="users">
-  <%= render @users %>
+    <div class="col-lg-3">
+      <h4>Users</h4>
+      <%= turbo_stream_from "users" %>
+      <div id="users">
+        <ul>
+          <%= render @users %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <%= form_with(model: [@message], remote: true, class: "d-flex",
+                      data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |f| %>
+          <%= f.text_field :body, id: 'chat-text', class: "form-control", autocomplete: 'off' %>
+          <%= f.submit data: { disable_with: false }, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<h4>Messages</h4>
-<%= turbo_stream_from "messages" %>
-<div id="messages">
-  <%= render @messages %>
-</div>
-
-<div class="form-group">
-  <%= form_with(model: [@message], remote: true ) do |f| %>
-    <%= f.text_field :body, id: 'chat-text', class: "form-control", autocomplete: 'off' %>
-    <%= f.submit data: { disable_with: false }, class: "btn btn-primary" %>
-  <% end %>
-</div>
-
