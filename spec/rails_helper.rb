@@ -11,6 +11,8 @@ require "bundler/setup"
 require 'support/factory_bot'
 ::Bundler.require(:default, :test)
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 ::Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     # Choose a test framework:
