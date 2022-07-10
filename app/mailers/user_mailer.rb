@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'  # TODO: Set this as an environment setting.
+  default from: 'notifications@example.com'  # TODO: Set this as an environment setting. etc.
 
   def weekly_digest
     @user = params[:user]
