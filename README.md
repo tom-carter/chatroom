@@ -4,20 +4,6 @@
 
 This is tested with 2.7.5 - probably works with other Rubys but not sure. 
 
-
-* Email
-
-I've been using Mailcatcher to handle email in development environment.
-https://mailcatcher.me
-To set it up run: 
-```ruby
-gem install mailcatcher
-mailcatcher
-```
-
-Then read emails on http://127.0.0.1:1080/
-The development configuration is set up to send emails to the correct port.
-
 * System dependencies
 
 1. Redis
@@ -27,13 +13,28 @@ The development configuration is set up to send emails to the correct port.
 * Set up
 
 `bundle install`
+
 `rake db:migrate`
+
 `rails s`
 
 Then visit http://127.0.0.1:3000
 
+* Email
 
-* Part 3
+I've been using Mailcatcher to handle email in development environment.
+https://mailcatcher.me
+
+To set it up run:
+```ruby
+gem install mailcatcher
+mailcatcher
+```
+
+Then read emails on http://127.0.0.1:1080/
+The development configuration is set up to send emails to the correct port.
+
+* Part 3 - sending a weekly email.
 
 I assume that the test does not require me to actually add a cron job (this is something very hard to achieve when I don't know the system it will be run on). So I have provided a rake task.
 Typically you might add something to Cron:
